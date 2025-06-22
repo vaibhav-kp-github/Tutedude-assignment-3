@@ -27,9 +27,17 @@ $("#submit").click(function(e){
     if (isEmail($("#email").val()) == false ) {
         errormessage += "<p>Email is not valid</p>";
     }
-    if ($.isNumeric($("#phone").val()) == false) {
-        errormessage += "<p>Phone no. is not valid</p>";
+    if ( $("#phone").val() !== "" && !/^[0-9]{10}$/.test($("#phone").val().trim())) {
+        errormessage += "<p>Phone number must be exactly 10 digits</p>";
     }
+
+    if ($("#password").val().length < 8) {
+        errormessage += "<p>Password must be at least 8 characters long</p>";
+    }
+    if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test($("#password").val())) {
+        errormessage += "<p>Password must include uppercase, lowercase, number & special character</p>";
+    }
+    
     if ($("#password").val() != $("#confirmpassword").val()){
         errormessage += "<p>Password is not match</p>";
     }
