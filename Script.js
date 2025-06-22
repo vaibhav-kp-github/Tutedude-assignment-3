@@ -34,7 +34,7 @@ $("#submit").click(function(e){
     if ($("#password").val().length < 8) {
         errormessage += "<p>Password must be at least 8 characters long</p>";
     }
-    if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test($("#password").val())) {
+    else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test($("#password").val())) {
         errormessage += "<p>Password must include uppercase, lowercase, number & special character</p>";
     }
     
