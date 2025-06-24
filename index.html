@@ -26,6 +26,8 @@
         <div>
             <label for="phone">Phone no. of the Applicant</label>
             <input type="tel" id="phone" maxlength="10" pattern="[0-9]{10}" />
+
+            <!-- <input type="tel" name="phone" max="10" id="phone" value="" required> -->
         </div>
         <div>
             <label for="password">Password</label>
@@ -34,6 +36,10 @@
         <div>
             <label for="confirmpassword">Confirm Password</label>
             <input type="password" name="confirmpassword" id="confirmpassword" value="" required>
+        </div>
+        <div id="chkbx">
+            <input type="checkbox" onclick="showhide()">
+            <span> Show Password</span>
         </div>
 
         <button type="submit" id="submit">Submit</button>
